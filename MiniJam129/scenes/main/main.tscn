@@ -8,9 +8,6 @@
 
 [node name="Main" type="Node"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(-24.0763, 61.3705)
-
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource("4_v8wf4")
 format = 2
