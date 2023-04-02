@@ -7,12 +7,15 @@ extends CharacterBody2D
 @onready var landSFX = $Land
 
 const JUMP_VELOCITY = -550.0
-const ACCELERATION = 500.0
-const DECELERATION = 500.0
-const MAX_SPEED = 160.0
-const MAX_FALL_SPEED = 400
+const ACCELERATION = 700.0
+const DECELERATION = 600.0
+const MAX_FALL_SPEED = 700
+const MAX_SPEED = 260.0
+const SPRINT_ACCELERATION = 1000
+const SPRINT_MAX_SPEED = 450
 
 const gravity = 980
+
 
 var currentSquash = 1.0
 var currentSquashVelocity = 0.0
@@ -60,9 +63,14 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("move_left", "move_right")
+	
 	if direction:
-		velocity.x += direction * ACCELERATION * delta
-		velocity.x = clamp(velocity.x,-MAX_SPEED,MAX_SPEED)
+		if Input.is_action_pressed("speed_up"):
+			velocity.x += direction * SPRINT_ACCELERATION * delta
+			velocity.x = clamp(velocity.x,-SPRINT_MAX_SPEED, SPRINT_MAX_SPEED)
+		else:
+			velocity.x += direction * ACCELERATION * delta
+			velocity.x = clamp(velocity.x,-MAX_SPEED, MAX_SPEED)
 	
 	else:
 		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
