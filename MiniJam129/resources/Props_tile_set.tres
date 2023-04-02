@@ -1,17 +1,12 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://t85ai17ukut0"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://t85ai17ukut0"]
 
-[ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/environment/PropSpriteSheet.png" id="1_b4rg7"]
-[ext_resource type="Texture2D" uid="uid://bep1o2waek407" path="res://assets/environment/Tileable_Cobblestone.png" id="1_oqmbm"]
+[ext_resource type="PackedScene" uid="uid://ctopv5tqwm41a" path="res://scenes/game_objects/torch.tscn" id="1_vnmqa"]
 [ext_resource type="PackedScene" uid="uid://c0npj6txyampl" path="res://scenes/game_objects/platform.tscn" id="2_gtbqd"]
 [ext_resource type="PackedScene" uid="uid://t3ek660xi5av" path="res://scenes/game_objects/platform_Stone.tscn" id="3_vlht4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2lob"]
-texture = ExtResource("1_b4rg7")
-texture_region_size = Vector2i(64, 64)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdins"]
-texture = ExtResource("1_oqmbm")
-2:2/0 = 0
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_onglo"]
+resource_name = "Props"
+scenes/2/scene = ExtResource("1_vnmqa")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jvf5i"]
 resource_name = "Platforms"
@@ -20,6 +15,5 @@ scenes/2/scene = ExtResource("3_vlht4")
 
 [resource]
 tile_size = Vector2i(64, 64)
-sources/5 = SubResource("TileSetAtlasSource_vdins")
 sources/6 = SubResource("TileSetScenesCollectionSource_jvf5i")
-sources/10 = SubResource("TileSetAtlasSource_p2lob")
+sources/0 = SubResource("TileSetScenesCollectionSource_onglo")
