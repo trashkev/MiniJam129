@@ -7,12 +7,12 @@ extends CharacterBody2D
 @onready var landSFX = $Land
 
 const JUMP_VELOCITY = -550.0
-const ACCELERATION = 700.0
-const DECELERATION = 600.0
+const ACCELERATION = 400.0
+const DECELERATION = 100.0
 const MAX_FALL_SPEED = 700
-const MAX_SPEED = 260.0
-const SPRINT_ACCELERATION = 1000
-const SPRINT_MAX_SPEED = 450
+const MAX_SPEED = 190.0
+const SPRINT_ACCELERATION = 800
+const SPRINT_MAX_SPEED = 300
 
 const gravity = 980
 
