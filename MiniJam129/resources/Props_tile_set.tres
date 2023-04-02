@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=8 format=3 uid="uid://t85ai17ukut0"]
 
 [ext_resource type="PackedScene" uid="uid://ctopv5tqwm41a" path="res://scenes/game_objects/torch.tscn" id="1_vnmqa"]
-[ext_resource type="PackedScene" path="res://scenes/game_objects/platform.tscn" id="2_gtbqd"]
+[ext_resource type="PackedScene" uid="uid://c0npj6txyampl" path="res://scenes/game_objects/platform.tscn" id="2_gtbqd"]
 [ext_resource type="PackedScene" uid="uid://xpsc18vnbmpa" path="res://scenes/game_objects/spikes.tscn" id="2_j2s4n"]
-[ext_resource type="PackedScene" path="res://scenes/game_objects/platform_Stone.tscn" id="3_vlht4"]
+[ext_resource type="PackedScene" uid="uid://t3ek660xi5av" path="res://scenes/game_objects/platform_Stone.tscn" id="3_vlht4"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_onglo"]
 resource_name = "Props"
