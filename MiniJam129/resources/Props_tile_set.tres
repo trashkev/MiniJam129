@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://t85ai17ukut0"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bs4p7fepj2krl"]
 
 [ext_resource type="PackedScene" uid="uid://ctopv5tqwm41a" path="res://scenes/game_objects/torch.tscn" id="1_vnmqa"]
-[ext_resource type="PackedScene" uid="uid://c0npj6txyampl" path="res://scenes/game_objects/platform.tscn" id="2_gtbqd"]
 [ext_resource type="PackedScene" uid="uid://xpsc18vnbmpa" path="res://scenes/game_objects/spikes.tscn" id="2_j2s4n"]
+[ext_resource type="PackedScene" uid="uid://c0npj6txyampl" path="res://scenes/game_objects/platform_wood.tscn" id="3_iceus"]
 [ext_resource type="PackedScene" uid="uid://t3ek660xi5av" path="res://scenes/game_objects/platform_Stone.tscn" id="3_vlht4"]
+[ext_resource type="PackedScene" uid="uid://dmty2mctxescw" path="res://scenes/game_objects/platform_hay.tscn" id="5_cxexh"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_onglo"]
 resource_name = "Props"
@@ -15,11 +16,17 @@ scenes/1/scene = ExtResource("2_j2s4n")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jvf5i"]
 resource_name = "Platforms"
-scenes/1/scene = ExtResource("2_gtbqd")
+scenes/1/scene = ExtResource("3_iceus")
 scenes/2/scene = ExtResource("3_vlht4")
+scenes/3/scene = ExtResource("5_cxexh")
 
 [resource]
 tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 0
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.960784, 0.105882, 0, 1)
 sources/6 = SubResource("TileSetScenesCollectionSource_jvf5i")
 sources/0 = SubResource("TileSetScenesCollectionSource_onglo")
 sources/1 = SubResource("TileSetScenesCollectionSource_cpx4f")
