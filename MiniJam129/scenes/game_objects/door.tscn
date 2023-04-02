@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cif8"]
 size = Vector2(72, 91)
 
-[node name="Door" type="Area2D"]
+[node name="ExitDoor" type="Area2D"]
 position = Vector2(707, 2360)
 collision_layer = 8
 collision_mask = 4
@@ -14,8 +14,10 @@ script = ExtResource("1_h5ptn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jq56m")
+hframes = 2
+frame = 1
 region_enabled = true
-region_rect = Rect2(0, 576, 128, 128)
+region_rect = Rect2(0, 576, 256, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

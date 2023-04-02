@@ -107,7 +107,6 @@ func updateMovement(delta):
 		blink_timer.start()
 		landSFX.pitch_scale = randf_range(0.8,1)
 		landSFX.play()
-		camera.add_trauma(0.1)
 		
 		var slimeParticleInstance = slimeParticleScene.instantiate()
 		get_parent().add_child(slimeParticleInstance)

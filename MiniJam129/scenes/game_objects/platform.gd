@@ -15,7 +15,7 @@ var lastFrame = 1
 
 func poison():
 	if poisoned == false:
-		print("IVE BEEN POISONED!")
+		#print("IVE BEEN POISONED!")
 		slimeSprite.visible = true
 		poisoned = true
 		destroy_timer.start()
@@ -46,7 +46,7 @@ func _process(delta):
 		#if frame changed
 		if(lastFrame<frame):
 			animationPlayer.play("Shake")
-			print(frame-1)
+			#print(frame-1)
 			slimeSprite.frame = frame - 1
 		
 	if(destroy_timer.is_stopped() and poisoned):
