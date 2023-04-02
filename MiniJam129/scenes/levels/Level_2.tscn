@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://4x5q3dq8kq42"]
+[gd_scene load_steps=6 format=3 uid="uid://b8abeybe4fxnm"]
 
 [ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_ehya8"]
 [ext_resource type="TileSet" uid="uid://bs4p7fepj2krl" path="res://resources/Props_tile_set.tres" id="2_akft1"]
