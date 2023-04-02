@@ -24,17 +24,14 @@ var framesSinceStart = 0
 var was_on_floor = true
 var was_on_ceiling = false
 
-func remap(value,lowA,highA,lowB,highB):
-	return (lowB + (value - lowA) * (highB - lowB) / (highA - lowA))
-
-func updateSpriteSquish(velocity,delta):
+func updateSpriteSquish(vel,delta):
 	
 	framesSinceStart += 1
 	var stretchAmount = 0.1
 	if !is_on_floor(): stretchAmount = 0.04
-	sprite2d.scale.x = 0.5 + velocity.x/ MAX_SPEED * stretchAmount * (sin(framesSinceStart*0.2)/2)
+	sprite2d.scale.x = 0.5 + vel.x/ MAX_SPEED * stretchAmount * (sin(framesSinceStart*0.2)/2)
 	
-	squashTarget = (abs(velocity.y)/2000) + 1.0
+	squashTarget = (abs(vel.y)/2000) + 1.0
 	var dampingFactor = max(0,1 - squashDamping * delta)
 	var acceleration = (squashTarget - currentSquash) * squashSpringy * delta
 	currentSquashVelocity = currentSquashVelocity * dampingFactor + acceleration

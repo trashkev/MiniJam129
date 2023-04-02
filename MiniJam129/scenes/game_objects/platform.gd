@@ -10,8 +10,9 @@ extends StaticBody2D
 
 var poisoned = false
 
-var frame = 0
-var lastFrame = 0
+var frame = 1
+var lastFrame = 1
+
 func poison():
 	if poisoned == false:
 		print("IVE BEEN POISONED!")
@@ -40,13 +41,13 @@ func _ready():
 func _process(delta):
 	if(poisoned):
 		lastFrame = frame
-		frame = floor((slimeSprite.hframes / destroy_timer.wait_time) * (destroy_timer.wait_time - destroy_timer.time_left))
-		print(frame, lastFrame)
+		frame = floor((slimeSprite.hframes / destroy_timer.wait_time) * (destroy_timer.wait_time - destroy_timer.time_left)) -1
+		
 		#if frame changed
 		if(lastFrame<frame):
 			animationPlayer.play("Shake")
-			print("played anim")
-		slimeSprite.frame = frame
+			print(frame)
+			slimeSprite.frame = frame
 		
 	if(destroy_timer.is_stopped() and poisoned):
 		destroy()
