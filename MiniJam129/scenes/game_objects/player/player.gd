@@ -11,7 +11,7 @@ const ACCELERATION = 400.0
 const DECELERATION = 100.0
 const MAX_FALL_SPEED = 700
 const MAX_SPEED = 190.0
-const SPRINT_ACCELERATION = 800
+const SPRINT_ACCELERATION = 700
 const SPRINT_MAX_SPEED = 300
 
 const gravity = 980
@@ -65,7 +65,7 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	
 	if direction:
-		if Input.is_action_pressed("speed_up"):
+		if Input.is_action_pressed("speed_up") and is_on_floor():
 			velocity.x += direction * SPRINT_ACCELERATION * delta
 			velocity.x = clamp(velocity.x,-SPRINT_MAX_SPEED, SPRINT_MAX_SPEED)
 		else:
