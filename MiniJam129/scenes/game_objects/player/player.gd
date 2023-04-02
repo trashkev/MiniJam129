@@ -3,7 +3,8 @@ extends CharacterBody2D
 @onready var coyote_timer = $CoyoteTimer
 @onready var blink_timer = $BlinkTimer
 @onready var sprite2d = $Sprite2D
-
+@onready var jumpSFX = $Jump
+@onready var landSFX = $Land
 
 const JUMP_VELOCITY = -550.0
 const ACCELERATION = 500.0
@@ -56,6 +57,8 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or (!coyote_timer.is_stopped())):
 		velocity.y = JUMP_VELOCITY
+		jumpSFX.pitch_scale = randf_range(0.7,1.4)
+		jumpSFX.play()
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -80,6 +83,8 @@ func _physics_process(delta):
 	#BLINK CHECK (if you JUST landed or hit ceiling)
 	if((!was_on_floor && is_on_floor()) or !was_on_ceiling && is_on_ceiling()):
 		blink_timer.start()
+		landSFX.pitch_scale = randf_range(0.8,1)
+		landSFX.play()
 	#COYOTE CHECK (if you JUST left the floor)
 	if was_on_floor && !is_on_floor():
 		coyote_timer.start()

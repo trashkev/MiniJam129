@@ -6,6 +6,8 @@ extends StaticBody2D
 
 @export var woodParticleScene: PackedScene
 @export var slimeParticleScene: PackedScene
+
+
 var poisoned = false
 
 var frame = 0
@@ -20,6 +22,7 @@ func poison():
 	
 	
 func destroy():
+	
 	var woodParticleInstance = woodParticleScene.instantiate()
 	get_parent().add_child(woodParticleInstance)
 	woodParticleInstance.transform = transform
