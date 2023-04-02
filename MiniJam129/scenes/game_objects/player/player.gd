@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var coyote_timer = $CoyoteTimer
 @onready var blink_timer = $BlinkTimer

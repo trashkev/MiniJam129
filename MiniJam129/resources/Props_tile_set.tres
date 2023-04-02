@@ -1,12 +1,17 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://t85ai17ukut0"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://t85ai17ukut0"]
 
-[ext_resource type="PackedScene" path="res://scenes/game_objects/torch.tscn" id="1_vnmqa"]
+[ext_resource type="PackedScene" uid="uid://ctopv5tqwm41a" path="res://scenes/game_objects/torch.tscn" id="1_vnmqa"]
 [ext_resource type="PackedScene" path="res://scenes/game_objects/platform.tscn" id="2_gtbqd"]
+[ext_resource type="PackedScene" uid="uid://xpsc18vnbmpa" path="res://scenes/game_objects/spikes.tscn" id="2_j2s4n"]
 [ext_resource type="PackedScene" path="res://scenes/game_objects/platform_Stone.tscn" id="3_vlht4"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_onglo"]
 resource_name = "Props"
 scenes/2/scene = ExtResource("1_vnmqa")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cpx4f"]
+resource_name = "Hazards"
+scenes/1/scene = ExtResource("2_j2s4n")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jvf5i"]
 resource_name = "Platforms"
@@ -17,3 +22,4 @@ scenes/2/scene = ExtResource("3_vlht4")
 tile_size = Vector2i(64, 64)
 sources/6 = SubResource("TileSetScenesCollectionSource_jvf5i")
 sources/0 = SubResource("TileSetScenesCollectionSource_onglo")
+sources/1 = SubResource("TileSetScenesCollectionSource_cpx4f")
