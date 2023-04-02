@@ -13,7 +13,7 @@ class_name Player
 
 @export var slimeParticleScene: PackedScene
 
-const JUMP_VELOCITY = -550.0
+const JUMP_VELOCITY = -520.0
 const ACCELERATION = 400.0
 const DECELERATION = 100.0
 const MAX_FALL_SPEED = 700
