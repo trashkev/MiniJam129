@@ -37,7 +37,6 @@ woodParticleScene = ExtResource("2_ip5sq")
 slimeParticleScene = ExtResource("3_08a24")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_ahapg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
