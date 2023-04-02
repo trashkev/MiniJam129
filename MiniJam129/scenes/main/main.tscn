@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://x5yk2cldngiy"]
+[gd_scene load_steps=5 format=3 uid="uid://cxuk8p88sxjh2"]
 
-[ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_pxyg6"]
+[ext_resource type="TileSet" uid="uid://b66cw8uv4nmjx" path="res://resources/Tileables.tres" id="1_pxyg6"]
 [ext_resource type="PackedScene" uid="uid://bjqu022jv78bk" path="res://scenes/game_objects/player/player.tscn" id="1_xvpqc"]
 [ext_resource type="TileSet" uid="uid://bb2r4t6fgqutg" path="res://resources/LevelBoundary.tres" id="2_5vk3m"]
 [ext_resource type="TileSet" uid="uid://t85ai17ukut0" path="res://resources/Props_tile_set.tres" id="2_craea"]
@@ -32,8 +32,8 @@ position = Vector2(224, 2528)
 scale = Vector2(1, 1.00422)
 
 [connection signal="body_entered" from="Foreground/Spikes" to="Foreground/Spikes" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@19693" to="Foreground/@Spikes@19693" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@19695" to="Foreground/@Spikes@19695" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@19696" to="Foreground/@Spikes@19696" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@19697" to="Foreground/@Spikes@19697" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@19721" to="Foreground/@Spikes@19721" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Foreground/@Spikes@40116" to="Foreground/@Spikes@40116" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Foreground/@Spikes@40118" to="Foreground/@Spikes@40118" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Foreground/@Spikes@40119" to="Foreground/@Spikes@40119" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Foreground/@Spikes@40120" to="Foreground/@Spikes@40120" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Foreground/@Spikes@40144" to="Foreground/@Spikes@40144" method="_on_body_entered" flags=18]
