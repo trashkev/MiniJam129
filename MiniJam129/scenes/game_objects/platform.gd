@@ -41,13 +41,13 @@ func _ready():
 func _process(delta):
 	if(poisoned):
 		lastFrame = frame
-		frame = floor((slimeSprite.hframes / destroy_timer.wait_time) * (destroy_timer.wait_time - destroy_timer.time_left)) -1
+		frame = floor((slimeSprite.hframes / destroy_timer.wait_time) * (destroy_timer.wait_time - destroy_timer.time_left))
 		
 		#if frame changed
 		if(lastFrame<frame):
 			animationPlayer.play("Shake")
-			print(frame)
-			slimeSprite.frame = frame
+			print(frame-1)
+			slimeSprite.frame = frame - 1
 		
 	if(destroy_timer.is_stopped() and poisoned):
 		destroy()
