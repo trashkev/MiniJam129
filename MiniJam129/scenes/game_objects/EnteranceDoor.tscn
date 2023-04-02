@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciocllh8iroq6"]
+
+[ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/environment/PropSpriteSheet.png" id="1_4sdlm"]
+
+[node name="EnterDoor" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+collision_layer = 8
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -62.8572)
+texture = ExtResource("1_4sdlm")
+hframes = 2
+frame = 1
+region_enabled = true
+region_rect = Rect2(0, 576, 256, 128)

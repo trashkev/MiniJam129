@@ -7,15 +7,15 @@
 size = Vector2(72, 91)
 
 [node name="ExitDoor" type="Area2D"]
-position = Vector2(707, 2360)
+scale = Vector2(0.7, 0.7)
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_h5ptn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -62.8572)
 texture = ExtResource("1_jq56m")
 hframes = 2
-frame = 1
 region_enabled = true
 region_rect = Rect2(0, 576, 256, 128)
 
