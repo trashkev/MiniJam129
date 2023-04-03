@@ -32,6 +32,7 @@ _data = {
 
 [node name="Platform" type="StaticBody2D"]
 collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_wa8lk")
 woodParticleScene = ExtResource("2_f77c8")
 slimeParticleScene = ExtResource("3_6bo10")
