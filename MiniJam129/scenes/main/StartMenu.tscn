@@ -37,7 +37,8 @@ theme = SubResource("Theme_b65rc")
 theme_override_colors/default_color = Color(0, 0.67451, 0, 1)
 theme_override_constants/line_separation = 19
 theme_override_font_sizes/normal_font_size = 400
-text = "SLIME GAME?? IDK"
+bbcode_enabled = true
+text = "[center]SLIME up![center]"
 scroll_active = false
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -51,6 +52,7 @@ texture_normal = ExtResource("3_0hrcb")
 script = ExtResource("5_0vb8t")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="TextureButton"]
+layout_mode = 0
 offset_left = 82.1465
 offset_top = 20.8969
 offset_right = 699.146
