@@ -20,12 +20,10 @@ region_enabled = true
 region_rect = Rect2(0, 448, 128, 128)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 position = Vector2(0, -16)
 polygon = PackedVector2Array(-17, -12, 17, -12, 23, 1, -23, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

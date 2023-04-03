@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://hmeuc6t026td" path="res://assets/sfx/break1.wav" id="5_dl3mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahapg"]
-size = Vector2(64, 32)
+size = Vector2(62, 31)
 
 [sub_resource type="Animation" id="Animation_f3h3r"]
 resource_name = "Shake"
@@ -38,6 +38,7 @@ slimeParticleScene = ExtResource("3_6bo10")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ahapg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

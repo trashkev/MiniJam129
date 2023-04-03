@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dp3ij6y2aa51f"]
+[gd_scene load_steps=11 format=3 uid="uid://dp3ij6y2aa51f"]
 
 [ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_wqsqb"]
 [ext_resource type="TileSet" uid="uid://bs4p7fepj2krl" path="res://resources/Props_tile_set.tres" id="2_bunf7"]
@@ -7,12 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bjqu022jv78bk" path="res://scenes/game_objects/player/player.tscn" id="4_pd71d"]
 [ext_resource type="PackedScene" path="res://scenes/game_objects/EnteranceDoor.tscn" id="5_5ycxi"]
 [ext_resource type="PackedScene" path="res://scenes/game_objects/ExitDoor.tscn" id="6_15tvx"]
-[ext_resource type="FontFile" uid="uid://c431c8dh8ls8s" path="res://assets/environment/Daydream.ttf" id="8_2bh4f"]
-
-[sub_resource type="Theme" id="Theme_oj36y"]
-default_base_scale = 15.0
-default_font = ExtResource("8_2bh4f")
-default_font_size = 32
+[ext_resource type="Texture2D" uid="uid://dfyjxy104u1w1" path="res://scenes/space_up.png" id="7_rfw3l"]
+[ext_resource type="Texture2D" uid="uid://dy13sq1a3kyph" path="res://scenes/Left_right.png" id="8_4dhv0"]
+[ext_resource type="Texture2D" uid="uid://di0wkar1apnw7" path="res://scenes/sprint.png" id="10_kiee7"]
 
 [node name="Level_1" type="Node"]
 
@@ -41,79 +38,25 @@ position = Vector2(-128, 2592)
 [node name="ExitDoor" parent="." instance=ExtResource("6_15tvx")]
 position = Vector2(-128, 1633)
 
+[node name="SpaceUp" type="Sprite2D" parent="."]
+position = Vector2(832, 2432)
+scale = Vector2(3, 3)
+texture = ExtResource("7_rfw3l")
+
+[node name="LeftRight" type="Sprite2D" parent="."]
+position = Vector2(352, 2560)
+scale = Vector2(3, 3)
+texture = ExtResource("8_4dhv0")
+
 [node name="Entities" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Player" parent="Entities" instance=ExtResource("4_pd71d")]
-position = Vector2(64, 2576)
+position = Vector2(-128, 2592)
 scale = Vector2(1, 1.00422)
 collision_mask = 19
 
-[node name="text1" type="Node2D" parent="."]
-scale = Vector2(0.292, 0.292)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="text1"]
-offset_left = 592.466
-offset_top = 8198.63
-offset_right = 1209.47
-offset_bottom = 8461.63
-theme = SubResource("Theme_oj36y")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_constants/line_separation = 19
-text = "	My dearest slimey son... I require sustenence to keep my strength..."
-scroll_active = false
-
-[connection signal="body_entered" from="Foreground/Spikes" to="Foreground/Spikes" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71418" to="Foreground/@Spikes@71418" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71419" to="Foreground/@Spikes@71419" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71421" to="Foreground/@Spikes@71421" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71422" to="Foreground/@Spikes@71422" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71423" to="Foreground/@Spikes@71423" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71424" to="Foreground/@Spikes@71424" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71427" to="Foreground/@Spikes@71427" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71428" to="Foreground/@Spikes@71428" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71431" to="Foreground/@Spikes@71431" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71432" to="Foreground/@Spikes@71432" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71433" to="Foreground/@Spikes@71433" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71434" to="Foreground/@Spikes@71434" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71435" to="Foreground/@Spikes@71435" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71436" to="Foreground/@Spikes@71436" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71437" to="Foreground/@Spikes@71437" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71438" to="Foreground/@Spikes@71438" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71440" to="Foreground/@Spikes@71440" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71441" to="Foreground/@Spikes@71441" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71443" to="Foreground/@Spikes@71443" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71450" to="Foreground/@Spikes@71450" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71453" to="Foreground/@Spikes@71453" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71456" to="Foreground/@Spikes@71456" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71457" to="Foreground/@Spikes@71457" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71459" to="Foreground/@Spikes@71459" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71461" to="Foreground/@Spikes@71461" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71462" to="Foreground/@Spikes@71462" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71464" to="Foreground/@Spikes@71464" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71466" to="Foreground/@Spikes@71466" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71469" to="Foreground/@Spikes@71469" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71471" to="Foreground/@Spikes@71471" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71473" to="Foreground/@Spikes@71473" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71475" to="Foreground/@Spikes@71475" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71478" to="Foreground/@Spikes@71478" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71479" to="Foreground/@Spikes@71479" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71480" to="Foreground/@Spikes@71480" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71484" to="Foreground/@Spikes@71484" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71486" to="Foreground/@Spikes@71486" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71488" to="Foreground/@Spikes@71488" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71491" to="Foreground/@Spikes@71491" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71493" to="Foreground/@Spikes@71493" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71504" to="Foreground/@Spikes@71504" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71505" to="Foreground/@Spikes@71505" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71507" to="Foreground/@Spikes@71507" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71509" to="Foreground/@Spikes@71509" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71511" to="Foreground/@Spikes@71511" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71512" to="Foreground/@Spikes@71512" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71517" to="Foreground/@Spikes@71517" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71519" to="Foreground/@Spikes@71519" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71520" to="Foreground/@Spikes@71520" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71524" to="Foreground/@Spikes@71524" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71530" to="Foreground/@Spikes@71530" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71533" to="Foreground/@Spikes@71533" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="Foreground/@Spikes@71551" to="Foreground/@Spikes@71551" method="_on_body_entered" flags=18]
+[node name="Sprint" type="Sprite2D" parent="."]
+position = Vector2(1312, 2496)
+scale = Vector2(3, 3)
+texture = ExtResource("10_kiee7")
