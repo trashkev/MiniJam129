@@ -29,14 +29,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.1, 1.5, 2),
-"transitions": PackedFloat32Array(0.466516, 0.378929, 1.46409, 4.28711),
+"transitions": PackedFloat32Array(1, 0.353553, 1.41421, 4.28709),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -30), Vector2(0, 300)]
+"values": [Vector2(0, -64), Vector2(0, -64), Vector2(0, -128), Vector2(0, 500)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5s4lh"]
@@ -45,6 +45,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(0, 300)
 collision_layer = 4
 collision_mask = 3
 safe_margin = 1.0
