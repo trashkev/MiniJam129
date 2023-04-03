@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmvya5qwh0ghm"]
+[gd_scene load_steps=9 format=3 uid="uid://dmvya5qwh0ghm"]
 
 [ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_qovrv"]
 [ext_resource type="TileSet" uid="uid://bs4p7fepj2krl" path="res://resources/Props_tile_set.tres" id="2_f751x"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://joro3q1w71n2" path="res://resources/LevelBoundary.tres" id="4_2wnfl"]
 [ext_resource type="PackedScene" path="res://scenes/game_objects/EnteranceDoor.tscn" id="5_5mo0s"]
 [ext_resource type="PackedScene" uid="uid://bjqu022jv78bk" path="res://scenes/game_objects/player/player.tscn" id="7_dgm5t"]
+[ext_resource type="PackedScene" path="res://scenes/game_objects/ending_cutscene.tscn" id="8_f7f88"]
 [ext_resource type="PackedScene" path="res://scenes/game_objects/knight.tscn" id="8_qch52"]
 
 [node name="Level_3" type="Node"]
@@ -37,7 +38,7 @@ position = Vector2(-992, 2400)
 y_sort_enabled = true
 
 [node name="Player" parent="Entities" instance=ExtResource("7_dgm5t")]
-position = Vector2(-2338, 1984)
+position = Vector2(-992, 2400)
 scale = Vector2(1, 1.00422)
 collision_mask = 19
 
@@ -49,6 +50,9 @@ position = Vector2(-736, 1760)
 
 [node name="Knight3" parent="Entities" instance=ExtResource("8_qch52")]
 position = Vector2(-1248, 1167)
+
+[node name="EndingCutscene" parent="." instance=ExtResource("8_f7f88")]
+position = Vector2(-2816, 416)
 
 [connection signal="body_entered" from="Foreground/@Spikes@26370" to="Foreground/@Spikes@26370" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Foreground/@Spikes@26377" to="Foreground/@Spikes@26377" method="_on_body_entered" flags=18]
