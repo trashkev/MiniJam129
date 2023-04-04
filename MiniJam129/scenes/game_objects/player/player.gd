@@ -22,7 +22,7 @@ const AIR_DECELERATION = 0
 const MAX_FALL_SPEED = 700
 const MAX_SPEED = 190.0
 const SPRINT_ACCELERATION = 700
-const SPRINT_MAX_SPEED = 300
+const SPRINT_MAX_SPEED = 250.0
 
 const gravity = 980
 
