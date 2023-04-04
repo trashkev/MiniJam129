@@ -5,8 +5,8 @@
 [ext_resource type="TileSet" uid="uid://joro3q1w71n2" path="res://resources/LevelBoundary.tres" id="3_3eyvm"]
 [ext_resource type="PackedScene" uid="uid://td0ql8almma0" path="res://scenes/game_objects/lava.tscn" id="3_umaev"]
 [ext_resource type="PackedScene" uid="uid://bjqu022jv78bk" path="res://scenes/game_objects/player/player.tscn" id="4_pd71d"]
-[ext_resource type="PackedScene" path="res://scenes/game_objects/EnteranceDoor.tscn" id="5_5ycxi"]
-[ext_resource type="PackedScene" path="res://scenes/game_objects/ExitDoor.tscn" id="6_15tvx"]
+[ext_resource type="PackedScene" uid="uid://ciocllh8iroq6" path="res://scenes/game_objects/EnteranceDoor.tscn" id="5_5ycxi"]
+[ext_resource type="PackedScene" uid="uid://cvjj6bge4326m" path="res://scenes/game_objects/ExitDoor.tscn" id="6_15tvx"]
 [ext_resource type="Texture2D" uid="uid://dfyjxy104u1w1" path="res://scenes/space_up.png" id="7_rfw3l"]
 [ext_resource type="Texture2D" uid="uid://dy13sq1a3kyph" path="res://scenes/Left_right.png" id="8_4dhv0"]
 [ext_resource type="Texture2D" uid="uid://di0wkar1apnw7" path="res://scenes/sprint.png" id="10_kiee7"]
@@ -48,6 +48,11 @@ position = Vector2(352, 2560)
 scale = Vector2(3, 3)
 texture = ExtResource("8_4dhv0")
 
+[node name="Sprint" type="Sprite2D" parent="."]
+position = Vector2(1312, 2496)
+scale = Vector2(3, 3)
+texture = ExtResource("10_kiee7")
+
 [node name="Entities" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -55,8 +60,3 @@ y_sort_enabled = true
 position = Vector2(-128, 2592)
 scale = Vector2(1, 1.00422)
 collision_mask = 19
-
-[node name="Sprint" type="Sprite2D" parent="."]
-position = Vector2(1312, 2496)
-scale = Vector2(3, 3)
-texture = ExtResource("10_kiee7")

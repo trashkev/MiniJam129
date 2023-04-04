@@ -11,11 +11,14 @@ class_name Player
 @onready var landSFX = $Land
 @onready var dieSFX = $Die
 
+@onready var trail = $Trail
+
 @export var slimeParticleScene: PackedScene
 
 const JUMP_VELOCITY = -520.0
 const ACCELERATION = 400.0
-const DECELERATION = 100.0
+const DECELERATION = 500.0
+const AIR_DECELERATION = 0
 const MAX_FALL_SPEED = 700
 const MAX_SPEED = 190.0
 const SPRINT_ACCELERATION = 700
@@ -35,8 +38,10 @@ var was_on_floor = true
 var was_on_ceiling = false
 
 var playerAlive = true
+var has_jump = false
 
 func die():
+	
 	if !playerAlive: return
 	velocity.x = 0
 	velocity.y = 0
@@ -52,6 +57,18 @@ func die():
 	slimeParticleInstance.transform = transform
 		
 	pass
+
+func accelerate(direction,delta):
+	if Input.is_action_pressed("speed_up") and is_on_floor():
+		velocity.x += direction * SPRINT_ACCELERATION * delta
+	else:
+		velocity.x += direction * ACCELERATION * delta
+
+func deccelerate(direction,delta):
+	if is_on_floor():
+		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, AIR_DECELERATION * delta)
 func updateMovement(delta):
 	
 	# Add the gravity.
@@ -62,33 +79,41 @@ func updateMovement(delta):
 		coyote_timer.stop()
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or (!coyote_timer.is_stopped())):
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or (!coyote_timer.is_stopped() and has_jump)):
+		has_jump = false
 		velocity.y = JUMP_VELOCITY
 		jumpSFX.pitch_scale = randf_range(0.7,1.4)
 		jumpSFX.play()
 		var slimeParticleInstance = slimeParticleScene.instantiate()
 		get_parent().add_child(slimeParticleInstance)
 		slimeParticleInstance.transform = transform
-		
+	
+	if (Input.is_action_just_released("jump") and !is_on_floor() and velocity.y < 0):
+		velocity.y += 0.5 * abs(velocity.y)	
 
-	# Get the input direction and handle the movement/deceleration.
-	var direction = Input.get_axis("move_left", "move_right")
-	
-	if direction:
-		if Input.is_action_pressed("speed_up") and is_on_floor():
-			velocity.x += direction * SPRINT_ACCELERATION * delta
-			velocity.x = clamp(velocity.x,-SPRINT_MAX_SPEED, SPRINT_MAX_SPEED)
-		else:
-			velocity.x += direction * ACCELERATION * delta
-			velocity.x = clamp(velocity.x,-MAX_SPEED, MAX_SPEED)
-	
+
+	var speedCap
+	if is_on_floor() and Input.is_action_pressed("speed_up"):
+		speedCap = SPRINT_MAX_SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
+		speedCap = MAX_SPEED
+		
+	var direction = Input.get_axis("move_left", "move_right")	
+	if direction:
+		if abs(velocity.x) < speedCap:
+			accelerate(direction,delta)
+		elif sign(velocity.x) != direction:
+			accelerate(direction,delta)
+		else:
+			deccelerate(direction,delta)
+	else:
+		deccelerate(direction,delta)
 	
 	was_on_floor = is_on_floor()
 	was_on_ceiling = is_on_ceiling()
 	move_and_slide()
 	
+	if(is_on_floor()): has_jump = true
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		#print("collided with: ", collision.get_collider().collision_layer)
@@ -137,6 +162,7 @@ func updateSpriteSquish(vel,delta):
 		
 func _physics_process(delta):
 	
+	
 	if !playerAlive and die_timer.is_stopped():
 		get_tree().reload_current_scene()
 	
@@ -149,6 +175,10 @@ func _physics_process(delta):
 		
 	if(playerAlive):
 		updateMovement(delta)
+		trail.global_position = Vector2.ZERO
+		trail.add_point(global_position + (Vector2.UP * 10))
+		if trail.get_point_count() > 500:
+			trail.remove_point(0)
 		
 	updateSpriteSquish(velocity,delta)
 

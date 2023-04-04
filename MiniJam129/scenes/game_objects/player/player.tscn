@@ -98,3 +98,7 @@ stream = ExtResource("6_lf8as")
 libraries = {
 "": SubResource("AnimationLibrary_5s4lh")
 }
+
+[node name="Trail" type="Line2D" parent="."]
+width = 4.0
+default_color = Color(0.4, 0.87451, 0.141176, 1)
