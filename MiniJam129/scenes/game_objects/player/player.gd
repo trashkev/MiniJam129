@@ -162,6 +162,9 @@ func updateSpriteSquish(vel,delta):
 		
 func _physics_process(delta):
 	
+	if Input.is_action_just_pressed("ToggleTrail"):
+		if !trail.visible: trail.visible = true
+		else: trail.visible = false
 	
 	if !playerAlive and die_timer.is_stopped():
 		get_tree().reload_current_scene()
