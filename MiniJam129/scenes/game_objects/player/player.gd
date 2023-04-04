@@ -64,7 +64,7 @@ func accelerate(direction,delta):
 	else:
 		velocity.x += direction * ACCELERATION * delta
 
-func deccelerate(direction,delta):
+func decelerate(direction,delta):
 	if is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
 	else:
@@ -105,9 +105,9 @@ func updateMovement(delta):
 		elif sign(velocity.x) != direction:
 			accelerate(direction,delta)
 		else:
-			deccelerate(direction,delta)
+			decelerate(direction,delta)
 	else:
-		deccelerate(direction,delta)
+		decelerate(direction,delta)
 	
 	was_on_floor = is_on_floor()
 	was_on_ceiling = is_on_ceiling()
