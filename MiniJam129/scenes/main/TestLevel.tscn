@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bs4p7fepj2krl" path="res://resources/Props_tile_set.tres" id="2_ms1c6"]
 [ext_resource type="TileSet" uid="uid://joro3q1w71n2" path="res://resources/LevelBoundary.tres" id="3_mcqhr"]
 [ext_resource type="PackedScene" uid="uid://bjqu022jv78bk" path="res://scenes/game_objects/player/player.tscn" id="4_wyrq1"]
-[ext_resource type="PackedScene" uid="uid://cvjj6bge4326m" path="res://scenes/game_objects/door.tscn" id="5_25gnb"]
+[ext_resource type="PackedScene" uid="uid://cvjj6bge4326m" path="res://scenes/game_objects/ExitDoor.tscn" id="5_25gnb"]
 
 [node name="main" type="Node"]
 
