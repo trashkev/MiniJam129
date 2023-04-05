@@ -1,12 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjqu022jv78bk"]
+[gd_scene load_steps=14 format=3 uid="uid://bjqu022jv78bk"]
 
 [ext_resource type="Script" path="res://scenes/game_objects/player/player.gd" id="1_lrp50"]
 [ext_resource type="PackedScene" uid="uid://bjydsxmgu3es" path="res://scenes/game_objects/slime_step_particle.tscn" id="2_0nfmo"]
 [ext_resource type="Script" path="res://scenes/game_objects/player/CameraShake.gd" id="2_fntqs"]
 [ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/environment/PropSpriteSheet.png" id="2_o5a31"]
 [ext_resource type="AudioStream" uid="uid://d33v4jvunhvw8" path="res://assets/sfx/jump1.wav" id="3_s4n1a"]
+[ext_resource type="Shader" path="res://scenes/game_objects/player/Slime.gdshader" id="4_khfyh"]
 [ext_resource type="AudioStream" uid="uid://b8h38wxfhdd0e" path="res://assets/sfx/land1.wav" id="4_lc2vj"]
+[ext_resource type="Texture2D" uid="uid://b1old02uh5jvh" path="res://assets/VFX/PerlinNoise_256x_32c_1lvl.png" id="5_5fmn2"]
 [ext_resource type="AudioStream" uid="uid://bxyaib5dqu66b" path="res://assets/sfx/death1.wav" id="6_lf8as"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5o77"]
+shader = ExtResource("4_khfyh")
+shader_parameter/NOISE_PATTERN = ExtResource("5_5fmn2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2e11"]
 size = Vector2(30, 32)
@@ -60,6 +66,9 @@ position_smoothing_speed = 4.0
 script = ExtResource("2_fntqs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_y5o77")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_o5a31")
 offset = Vector2(0, -64)
