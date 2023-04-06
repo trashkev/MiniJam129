@@ -1,16 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmvya5qwh0ghm"]
+[gd_scene load_steps=12 format=3 uid="uid://dmvya5qwh0ghm"]
 
 [ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_qovrv"]
+[ext_resource type="PackedScene" uid="uid://bwglfpjx3xj0g" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="1_tegqj"]
 [ext_resource type="TileSet" uid="uid://bs4p7fepj2krl" path="res://resources/Props_tile_set.tres" id="2_f751x"]
 [ext_resource type="PackedScene" uid="uid://td0ql8almma0" path="res://scenes/game_objects/lava.tscn" id="3_qfhvm"]
 [ext_resource type="TileSet" uid="uid://joro3q1w71n2" path="res://resources/LevelBoundary.tres" id="4_2wnfl"]
 [ext_resource type="Material" uid="uid://dolf8huhr4tfj" path="res://assets/VFX/lava_M.tres" id="4_rbq1o"]
-[ext_resource type="PackedScene" uid="uid://ciocllh8iroq6" path="res://scenes/game_objects/EnteranceDoor.tscn" id="5_5mo0s"]
+[ext_resource type="PackedScene" uid="uid://cqca0h440qpjv" path="res://scenes/game_objects/EnteranceDoor.tscn" id="5_5mo0s"]
 [ext_resource type="PackedScene" uid="uid://bjqu022jv78bk" path="res://scenes/game_objects/player/player.tscn" id="7_dgm5t"]
 [ext_resource type="PackedScene" uid="uid://iw2pj8nmsjy0" path="res://scenes/game_objects/ending_cutscene.tscn" id="8_f7f88"]
-[ext_resource type="PackedScene" uid="uid://c4ywrvt7ch3hb" path="res://scenes/game_objects/knight.tscn" id="8_qch52"]
+[ext_resource type="PackedScene" path="res://scenes/game_objects/knight.tscn" id="8_qch52"]
+[ext_resource type="PackedScene" uid="uid://bgtrqsinrkh3p" path="res://scenes/game_objects/BackgroundOST.tscn" id="11_ii1wx"]
 
 [node name="Level_3" type="Node"]
+
+[node name="Camera2D" parent="." instance=ExtResource("1_tegqj")]
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource("1_qovrv")
@@ -55,3 +59,6 @@ position = Vector2(-1248, 1167)
 
 [node name="EndingCutscene" parent="." instance=ExtResource("8_f7f88")]
 position = Vector2(-2816, 416)
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("11_ii1wx")]
+stream_paused = false

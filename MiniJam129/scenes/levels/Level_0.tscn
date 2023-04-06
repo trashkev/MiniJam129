@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://jxxfultchx2g"]
 
 [ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_n15fy"]
-[ext_resource type="PackedScene" uid="uid://cvjj6bge4326m" path="res://scenes/game_objects/ExitDoor.tscn" id="2_4umej"]
+[ext_resource type="PackedScene" path="res://scenes/game_objects/ExitDoor.tscn" id="2_4umej"]
 [ext_resource type="TileSet" uid="uid://bs4p7fepj2krl" path="res://resources/Props_tile_set.tres" id="3_6s27o"]
 [ext_resource type="TileSet" uid="uid://bjcblhfv3v5lg" path="res://resources/Lava.tres" id="4_ob8ja"]
 [ext_resource type="TileSet" uid="uid://joro3q1w71n2" path="res://resources/LevelBoundary.tres" id="5_npgqi"]

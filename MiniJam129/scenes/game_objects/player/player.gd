@@ -6,7 +6,7 @@ class_name Player
 @onready var die_timer = $DieTimer
 @onready var sprite2d = $Sprite2D
 @onready var animationPlayer = $AnimationPlayer
-@onready var camera = $Camera2D
+#@onready var camera = preload("res://scenes/game_objects/game_camera/game_camera.tscn")
 @onready var jumpSFX = $Jump
 @onready var landSFX = $Land
 @onready var dieSFX = $Die
@@ -48,7 +48,7 @@ func die():
 	playerAlive = false
 	animationPlayer.play("Die")
 	die_timer.start()
-	camera.add_trauma(0.4)
+#	camera.add_trauma(0.4)
 	dieSFX.pitch_scale = randf_range(0.8,1)
 	dieSFX.play()
 	

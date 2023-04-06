@@ -13,6 +13,7 @@ config_version=5
 config/name="MiniJam129"
 run/main_scene="res://scenes/main/StartMenu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+run/max_fps=60
 
 [debug]
 

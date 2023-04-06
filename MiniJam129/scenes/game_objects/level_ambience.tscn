@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dtnq0xlpuahop"]
+
+[node name="LevelAmbience" type="CanvasModulate"]
+color = Color(0.278431, 0.313726, 0.733333, 1)
