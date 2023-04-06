@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4ywrvt7ch3hb"]
 
-[ext_resource type="Script" path="res://scenes/levels/Knight.gd" id="1_43a8n"]
+[ext_resource type="Script" path="res://scenes/game_objects/basic_enemy/knight.gd" id="1_m55l8"]
 [ext_resource type="Texture2D" uid="uid://baea0cyq708jy" path="res://assets/environment/Characters.png" id="2_fgnrh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lckk3"]
@@ -34,8 +34,8 @@ size = Vector2(82, 37)
 [node name="Knight" type="CharacterBody2D"]
 scale = Vector2(-0.6, 0.6)
 collision_layer = 8
-collision_mask = 7
-script = ExtResource("1_43a8n")
+collision_mask = 39
+script = ExtResource("1_m55l8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(23, -64)

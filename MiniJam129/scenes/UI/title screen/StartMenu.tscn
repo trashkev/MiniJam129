@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwuxfpci5gev1"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_y44j6"]
 [ext_resource type="Material" uid="uid://dolf8huhr4tfj" path="res://assets/VFX/lava_M.tres" id="2_5xrex"]
 [ext_resource type="TileSet" uid="uid://bjcblhfv3v5lg" path="res://resources/Lava.tres" id="2_qgqll"]
 [ext_resource type="Texture2D" uid="uid://u2bfq12fkt1o" path="res://assets/environment/TextScroll.png" id="3_0hrcb"]
 [ext_resource type="FontFile" uid="uid://c431c8dh8ls8s" path="res://assets/environment/Daydream.ttf" id="4_qx0du"]
-[ext_resource type="Script" path="res://scenes/main/PlayButton.gd" id="5_0vb8t"]
+[ext_resource type="Script" path="res://scenes/UI/title screen/PlayButton.gd" id="5_0vb8t"]
 
 [sub_resource type="Theme" id="Theme_b65rc"]
 default_base_scale = 15.0

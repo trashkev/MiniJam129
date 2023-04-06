@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy13sq1a3kyph"
-path="res://.godot/imported/Left_right.png-20ded5ae7de6fab505ab04ff682a0f8a.ctex"
+uid="uid://3jenfgot80v1"
+path="res://.godot/imported/short jumpdirections.png-5b62b1c2e72fc675b0132a5f4a72554c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Left_right.png"
-dest_files=["res://.godot/imported/Left_right.png-20ded5ae7de6fab505ab04ff682a0f8a.ctex"]
+source_file="res://assets/environment/short jumpdirections.png"
+dest_files=["res://.godot/imported/short jumpdirections.png-5b62b1c2e72fc675b0132a5f4a72554c.ctex"]
 
 [params]
 

@@ -17,14 +17,11 @@ func _physics_process(delta):
 		
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		#print("collided with: ", collision.get_collider().collision_layer)
 		if collision.get_collider() is Player:
 			collision.get_collider().call("die")
 			speed=0
-		
 		if(is_on_wall()):
 			turnAround()
+			
 		
 	pass
-	
-

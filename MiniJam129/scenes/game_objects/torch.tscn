@@ -42,7 +42,6 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_gkytp")
 offset = Vector2(32, 0)
 hframes = 3
-frame = 1
 region_enabled = true
 region_rect = Rect2(0, 192, 384, 64)
 
@@ -54,7 +53,7 @@ libraries = {
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.898039, 0.439216, 0, 1)
-energy = 0.63
+energy = 0.83
 shadow_enabled = true
 shadow_color = Color(0.219608, 0.0980392, 0.0313726, 0)
 texture = ExtResource("2_khfj8")

@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0xxlwbgijwic"]
+[gd_scene load_steps=11 format=3 uid="uid://batyjw12x86r4"]
 
 [ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_faop6"]
 [ext_resource type="Material" uid="uid://dolf8huhr4tfj" path="res://assets/VFX/lava_M.tres" id="2_lc57x"]
 [ext_resource type="TileSet" uid="uid://bjcblhfv3v5lg" path="res://resources/Lava.tres" id="2_rmuy1"]
 [ext_resource type="FontFile" uid="uid://c431c8dh8ls8s" path="res://assets/environment/Daydream.ttf" id="3_gcyuh"]
 [ext_resource type="Texture2D" uid="uid://u2bfq12fkt1o" path="res://assets/environment/TextScroll.png" id="4_sqe28"]
-[ext_resource type="Script" path="res://scenes/main/PlayButton.gd" id="5_a04sk"]
-[ext_resource type="Script" path="res://scenes/main/QuitGameButton.gd" id="6_7p6mj"]
+[ext_resource type="Script" path="res://scenes/UI/title screen/PlayButton.gd" id="5_a04sk"]
+[ext_resource type="Script" path="res://scenes/UI/title screen/QuitGameButton.gd" id="6_7p6mj"]
 [ext_resource type="Texture2D" uid="uid://chgvelrgmou8g" path="res://assets/environment/kevin.png" id="7_olbv0"]
 [ext_resource type="Texture2D" uid="uid://d376jcyshtkb1" path="res://assets/environment/E94PWLXM_400x400.png" id="8_q7jkm"]
 

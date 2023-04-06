@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvjj6bge4326m"]
+[gd_scene load_steps=5 format=3 uid="uid://chtktenc7fieg"]
 
 [ext_resource type="Script" path="res://scenes/game_objects/door.gd" id="1_h5ptn"]
 [ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/environment/PropSpriteSheet.png" id="1_jq56m"]
+[ext_resource type="Texture2D" uid="uid://dmmilartk085c" path="res://assets/environment/light.png" id="3_0p7w4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cif8"]
 size = Vector2(72, 91)
@@ -23,5 +24,13 @@ region_rect = Rect2(0, 576, 256, 128)
 visible = false
 position = Vector2(0, 18.5)
 shape = SubResource("RectangleShape2D_2cif8")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.898039, 0.439216, 0, 1)
+energy = 0.96
+shadow_enabled = true
+shadow_color = Color(0.219608, 0.0980392, 0.0313726, 0)
+texture = ExtResource("3_0p7w4")
+texture_scale = 0.6
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
