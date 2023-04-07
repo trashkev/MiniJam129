@@ -1,15 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://jxxfultchx2g"]
+[gd_scene load_steps=17 format=3 uid="uid://bgsr7r2u4hnr3"]
 
-[ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_n15fy"]
-[ext_resource type="PackedScene" uid="uid://chtktenc7fieg" path="res://scenes/game_objects/ExitDoor.tscn" id="2_4umej"]
-[ext_resource type="TileSet" uid="uid://bs4p7fepj2krl" path="res://resources/Props_tile_set.tres" id="3_6s27o"]
-[ext_resource type="TileSet" uid="uid://bjcblhfv3v5lg" path="res://resources/Lava.tres" id="4_ob8ja"]
-[ext_resource type="TileSet" uid="uid://joro3q1w71n2" path="res://resources/LevelBoundary.tres" id="5_npgqi"]
-[ext_resource type="Script" path="res://scenes/levels/Cutscene.gd" id="6_rofvc"]
-[ext_resource type="Texture2D" uid="uid://u2bfq12fkt1o" path="res://assets/environment/TextScroll.png" id="7_hklup"]
-[ext_resource type="FontFile" uid="uid://c431c8dh8ls8s" path="res://assets/environment/Daydream.ttf" id="8_odo05"]
-[ext_resource type="Texture2D" uid="uid://baea0cyq708jy" path="res://assets/environment/Characters.png" id="9_yi711"]
-[ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/environment/PropSpriteSheet.png" id="10_cr15y"]
+[ext_resource type="TileSet" uid="uid://dpea5pxuaae85" path="res://resources/Tileables.tres" id="1_n15fy"]
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/ExitDoor.tscn" id="2_4umej"]
+[ext_resource type="TileSet" uid="uid://bo80aepynedu3" path="res://resources/Props_tile_set.tres" id="3_6s27o"]
+[ext_resource type="TileSet" uid="uid://hxravpnp5huq" path="res://resources/Lava.tres" id="4_ob8ja"]
+[ext_resource type="TileSet" uid="uid://57ms1cyle0fx" path="res://resources/LevelBoundary.tres" id="5_npgqi"]
+[ext_resource type="Script" path="res://assets/scripts/Cutscene.gd" id="6_rofvc"]
+[ext_resource type="Texture2D" uid="uid://u2bfq12fkt1o" path="res://assets/textures/sprites/TextScroll.png" id="7_hklup"]
+[ext_resource type="FontFile" uid="uid://c431c8dh8ls8s" path="res://assets/fonts/Daydream.ttf" id="8_odo05"]
+[ext_resource type="Texture2D" uid="uid://baea0cyq708jy" path="res://assets/textures/sprites/Characters.png" id="9_yi711"]
+[ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/textures/sprites/PropSpriteSheet.png" id="10_cr15y"]
 
 [sub_resource type="Theme" id="Theme_u1n7j"]
 default_base_scale = 15.0
@@ -288,6 +288,7 @@ layer_0/tile_data = PackedInt32Array(393233, 262145, 2, 327697, 65537, 1, 262161
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(422, 6)
 scale = Vector2(1, 1.00422)
+enabled = false
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0

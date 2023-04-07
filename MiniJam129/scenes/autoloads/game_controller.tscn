@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://tdj8phyq6ws5"]
+
+[ext_resource type="Script" path="res://scenes/autoloads/GameController.gd" id="1_hrhe2"]
+[ext_resource type="PackedScene" path="res://scenes/camera/game_camera.tscn" id="2_wy7vl"]
+[ext_resource type="PackedScene" uid="uid://k45pidkiiyb" path="res://scenes/player/player.tscn" id="3_l2v50"]
+[ext_resource type="AudioStream" uid="uid://c8xewebepyue4" path="res://assets/sfx/Space-Jazz.mp3" id="4_1r604"]
+
+[node name="GameController" type="Node"]
+script = ExtResource("1_hrhe2")
+
+[node name="Camera2D" parent="." instance=ExtResource("2_wy7vl")]
+
+[node name="Player" parent="." instance=ExtResource("3_l2v50")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1r604")
+volume_db = -14.0
+autoplay = true
+
+[connection signal="has_died" from="Player" to="." method="_on_player_has_died"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://assets/scripts/door.gd" id="1_h5ptn"]
+[ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/textures/sprites/PropSpriteSheet.png" id="1_jq56m"]
+[ext_resource type="Texture2D" uid="uid://dmmilartk085c" path="res://assets/textures/shaderTextures/light.png" id="3_0p7w4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cif8"]
+size = Vector2(72, 91)
+
+[node name="ExitDoor" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_h5ptn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -62.8572)
+texture = ExtResource("1_jq56m")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 576, 256, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 18.5)
+shape = SubResource("RectangleShape2D_2cif8")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.898039, 0.439216, 0, 1)
+energy = 0.96
+shadow_enabled = true
+shadow_color = Color(0.219608, 0.0980392, 0.0313726, 0)
+texture = ExtResource("3_0p7w4")
+texture_scale = 0.6
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

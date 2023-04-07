@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd3askc62qhxf"]
+
+[ext_resource type="Texture2D" uid="uid://bep1o2waek407" path="res://assets/textures/sprites/Tileable_Cobblestone.png" id="1_nwea5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_br2lw"]
+texture = ExtResource("1_nwea5")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bo5cv"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_br2lw")
+
+[node name="Background" type="TileMap"]
+tile_set = SubResource("TileSet_bo5cv")
+format = 2

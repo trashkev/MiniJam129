@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://037kq7ervhpp"]
+
+[ext_resource type="Shader" path="res://assets/shaders/Lava.gdshader" id="1_c6qqp"]
+[ext_resource type="Texture2D" uid="uid://csdeqrmxxmpd3" path="res://assets/textures/shaderTextures/bubbble_Mask.png" id="2_mxvf6"]
+[ext_resource type="Texture2D" uid="uid://b1old02uh5jvh" path="res://assets/textures/shaderTextures/PerlinNoise_256x_32c_1lvl.png" id="3_si4uu"]
+
+[resource]
+shader = ExtResource("1_c6qqp")
+shader_parameter/lavaA = Vector3(1, 0.749, 0.012)
+shader_parameter/lavaB = Vector3(0.91, 0.357, 0.016)
+shader_parameter/NOISE_PATTERN = ExtResource("3_si4uu")
+shader_parameter/BUBBLE_MASK = ExtResource("2_mxvf6")

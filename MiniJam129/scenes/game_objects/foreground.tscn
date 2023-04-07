@@ -1,0 +1,45 @@
+[gd_scene load_steps=14 format=3 uid="uid://klpf265aa4lx"]
+
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/props/torch.tscn" id="1_akd8h"]
+[ext_resource type="PackedScene" uid="uid://brr38o2ma1cjq" path="res://scenes/levelObjects/hazards/spikes.tscn" id="2_ayi3p"]
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/hazards/spikes_flipped.tscn" id="3_o2vdv"]
+[ext_resource type="PackedScene" uid="uid://bp5q4tl82lxx0" path="res://scenes/levelObjects/hazards/double_spike.tscn" id="4_o51g8"]
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/hazards/spikes_left.tscn" id="5_7gphq"]
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/hazards/spikes_right.tscn" id="6_2ffpu"]
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/platforms/platform_wood.tscn" id="7_6vrr2"]
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/platforms/platform_Stone.tscn" id="8_4f53v"]
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/platforms/platform_hay.tscn" id="9_l1pgl"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_onglo"]
+resource_name = "Props"
+scenes/2/scene = ExtResource("1_akd8h")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cpx4f"]
+resource_name = "Hazards"
+scenes/1/scene = ExtResource("2_ayi3p")
+scenes/2/scene = ExtResource("3_o2vdv")
+scenes/3/scene = ExtResource("4_o51g8")
+scenes/6/scene = ExtResource("5_7gphq")
+scenes/8/scene = ExtResource("6_2ffpu")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jvf5i"]
+resource_name = "Platforms"
+scenes/1/scene = ExtResource("7_6vrr2")
+scenes/2/scene = ExtResource("8_4f53v")
+scenes/3/scene = ExtResource("9_l1pgl")
+
+[sub_resource type="TileSet" id="TileSet_ybo2b"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 0
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.960784, 0.105882, 0, 1)
+sources/6 = SubResource("TileSetScenesCollectionSource_jvf5i")
+sources/0 = SubResource("TileSetScenesCollectionSource_onglo")
+sources/1 = SubResource("TileSetScenesCollectionSource_cpx4f")
+
+[node name="Foreground" type="TileMap"]
+position = Vector2(128, 16)
+tile_set = SubResource("TileSet_ybo2b")
+format = 2

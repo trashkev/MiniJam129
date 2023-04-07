@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://assets/scripts/platform.gd" id="1_6nvy6"]
+[ext_resource type="PackedScene" path="res://assets/vfx/wood_particle.tscn" id="2_imjrt"]
+[ext_resource type="PackedScene" path="res://assets/vfx/slime_particle.tscn" id="3_ytjm1"]
+[ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/textures/sprites/PropSpriteSheet.png" id="4_ej7k2"]
+[ext_resource type="AudioStream" uid="uid://hmeuc6t026td" path="res://assets/sfx/break1.wav" id="5_flkhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahapg"]
+size = Vector2(64, 32)
+
+[sub_resource type="Animation" id="Animation_f3h3r"]
+resource_name = "Shake"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.119477, 0.243198, 0.371271, 0.499453),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0872665, -0.0872665, 0.0872665, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3ht6"]
+_data = {
+"Shake": SubResource("Animation_f3h3r")
+}
+
+[node name="Platform" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_6nvy6")
+woodParticleScene = ExtResource("2_imjrt")
+slimeParticleScene = ExtResource("3_ytjm1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_ahapg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ej7k2")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 64)
+
+[node name="SlimeSprite" type="Sprite2D" parent="Sprite2D"]
+visible = false
+texture = ExtResource("4_ej7k2")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(0, 128, 384, 64)
+
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 5.0
+libraries = {
+"": SubResource("AnimationLibrary_a3ht6")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_flkhx")

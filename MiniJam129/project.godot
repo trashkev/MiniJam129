@@ -11,15 +11,13 @@ config_version=5
 [application]
 
 config/name="MiniJam129"
-run/main_scene="res://scenes/UI/title screen/StartMenu.tscn"
+run/main_scene="res://scenes/main/StartMenu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 run/max_fps=60
 
 [autoload]
 
-MusicController="*res://scenes/autoloads/MusicController.tscn"
-PlayerDied="*res://scenes/autoloads/PlayerDied.gd"
-Checkpoint="*res://scenes/autoloads/Checkpoint.gd"
+GameController="*res://scenes/autoloads/game_controller.tscn"
 
 [debug]
 
@@ -36,6 +34,7 @@ window/size/initial_position=Vector2i(0, -200)
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
+window/max_physics_steps_per_frame=32
 
 [input]
 
@@ -119,6 +118,10 @@ ToggleTrail={
 2d_physics/layer_4="Enemy"
 2d_physics/layer_5="Lava"
 2d_physics/layer_6="Checkpoint"
+
+[physics]
+
+common/max_physics_steps_per_frame=30
 
 [rendering]
 

@@ -1,17 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://4r8ae3nub3rd"]
+[gd_scene load_steps=10 format=3]
 
-[ext_resource type="PackedScene" uid="uid://bwglfpjx3xj0g" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="1_ejd5x"]
-[ext_resource type="TileSet" uid="uid://b8cmkmq0ta3xa" path="res://resources/Tileables.tres" id="1_pxyg6"]
-[ext_resource type="PackedScene" uid="uid://bjqu022jv78bk" path="res://scenes/game_objects/player/player.tscn" id="1_xvpqc"]
-[ext_resource type="TileSet" uid="uid://joro3q1w71n2" path="res://resources/LevelBoundary.tres" id="2_5vk3m"]
-[ext_resource type="TileSet" uid="uid://bs4p7fepj2krl" path="res://resources/Props_tile_set.tres" id="2_craea"]
-[ext_resource type="PackedScene" uid="uid://ch08rqltu4oeh" path="res://scenes/game_objects/vignette_effect.tscn" id="2_onhb4"]
+[ext_resource type="PackedScene" path="res://scenes/camera/game_camera.tscn" id="1_ejd5x"]
+[ext_resource type="TileSet" uid="uid://dpea5pxuaae85" path="res://resources/Tileables.tres" id="1_pxyg6"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_xvpqc"]
+[ext_resource type="TileSet" uid="uid://57ms1cyle0fx" path="res://resources/LevelBoundary.tres" id="2_5vk3m"]
+[ext_resource type="PackedScene" path="res://assets/vfx/vignette_effect.tscn" id="2_onhb4"]
 [ext_resource type="PackedScene" uid="uid://dtnq0xlpuahop" path="res://scenes/game_objects/level_ambience.tscn" id="3_k2jfk"]
-[ext_resource type="PackedScene" uid="uid://td0ql8almma0" path="res://scenes/game_objects/lava.tscn" id="6_g2j8d"]
-[ext_resource type="Material" uid="uid://dolf8huhr4tfj" path="res://assets/VFX/lava_M.tres" id="7_713wi"]
-[ext_resource type="PackedScene" uid="uid://cqca0h440qpjv" path="res://scenes/game_objects/EnteranceDoor.tscn" id="9_tv54r"]
-[ext_resource type="PackedScene" uid="uid://chtktenc7fieg" path="res://scenes/game_objects/ExitDoor.tscn" id="10_4gbyo"]
-[ext_resource type="PackedScene" uid="uid://bgtrqsinrkh3p" path="res://scenes/game_objects/BackgroundOST.tscn" id="12_0kac1"]
+[ext_resource type="PackedScene" uid="uid://bjs33nk43jeuo" path="res://scenes/game_objects/lava.tscn" id="6_g2j8d"]
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/EnteranceDoor.tscn" id="9_tv54r"]
+[ext_resource type="PackedScene" path="res://scenes/levelObjects/ExitDoor.tscn" id="10_4gbyo"]
 
 [node name="Level_1" type="Node"]
 
@@ -28,11 +25,9 @@ format = 2
 
 [node name="Foreground" type="TileMap" parent="."]
 position = Vector2(128, 16)
-tile_set = ExtResource("2_craea")
 format = 2
 
 [node name="Lava" parent="." instance=ExtResource("6_g2j8d")]
-material = ExtResource("7_713wi")
 layer_0/tile_data = PackedInt32Array()
 
 [node name="LevelBoundary" type="TileMap" parent="."]
@@ -53,7 +48,3 @@ y_sort_enabled = true
 position = Vector2(317, 1354)
 scale = Vector2(1, 1.00422)
 collision_mask = 19
-
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("12_0kac1")]
-
-[editable path="GameCamera/VignetteEffect"]

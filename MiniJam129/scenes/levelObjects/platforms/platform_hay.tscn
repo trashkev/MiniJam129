@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://assets/scripts/platform.gd" id="1_wa8lk"]
+[ext_resource type="PackedScene" path="res://assets/vfx/hay_particle.tscn" id="2_f77c8"]
+[ext_resource type="PackedScene" path="res://assets/vfx/slime_particle.tscn" id="3_6bo10"]
+[ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/textures/sprites/PropSpriteSheet.png" id="4_elj2h"]
+[ext_resource type="AudioStream" uid="uid://hmeuc6t026td" path="res://assets/sfx/break1.wav" id="5_dl3mj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahapg"]
+size = Vector2(62, 31)
+
+[sub_resource type="Animation" id="Animation_f3h3r"]
+resource_name = "Shake"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.119477, 0.243198, 0.371271, 0.499453),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0872665, -0.0872665, 0.0872665, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3ht6"]
+_data = {
+"Shake": SubResource("Animation_f3h3r")
+}
+
+[node name="Platform" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_wa8lk")
+woodParticleScene = ExtResource("2_f77c8")
+slimeParticleScene = ExtResource("3_6bo10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ahapg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_elj2h")
+region_enabled = true
+region_rect = Rect2(0, 704, 128, 64)
+
+[node name="SlimeSprite" type="Sprite2D" parent="Sprite2D"]
+visible = false
+texture = ExtResource("4_elj2h")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(0, 128, 384, 64)
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 5.0
+libraries = {
+"": SubResource("AnimationLibrary_a3ht6")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dl3mj")

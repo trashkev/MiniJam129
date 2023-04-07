@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" uid="uid://brwev7c3v0rg0" path="res://assets/textures/sprites/SlimeParticle.png" id="1_bfark"]
+[ext_resource type="Script" path="res://assets/scripts/one_shot_particle.gd" id="2_sd3xl"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cscty"]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 41.15
+flatness = 0.26
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 144.76
+initial_velocity_max = 190.84
+angular_velocity_min = -247.33
+angular_velocity_max = 219.85
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 0.2
+scale_max = 0.5
+hue_variation_min = -0.09
+hue_variation_max = 0.09
+
+[node name="WoodParticle" type="GPUParticles2D"]
+emitting = false
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_cscty")
+texture = ExtResource("1_bfark")
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("2_sd3xl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

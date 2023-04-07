@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/textures/sprites/PropSpriteSheet.png" id="1_ngc5t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahapg"]
+size = Vector2(64, 32)
+
+[node name="Platform_Stone" type="StaticBody2D"]
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_ahapg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ngc5t")
+region_enabled = true
+region_rect = Rect2(0, 64, 128, 64)

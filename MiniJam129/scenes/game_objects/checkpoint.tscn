@@ -1,22 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bir0ghmoji187"]
+[gd_scene load_steps=4 format=3 uid="uid://bisav5tpsqybg"]
 
-[ext_resource type="Script" path="res://scenes/game_objects/checkpointscene.gd" id="1_bgsu6"]
-[ext_resource type="PackedScene" uid="uid://bdx8r00nyigmi" path="res://scenes/game_objects/slime_checkpoint.tscn" id="2_kepr4"]
+[ext_resource type="Script" path="res://assets/scripts/checkpoint.gd" id="1_h3wle"]
+[ext_resource type="Texture2D" uid="uid://b1dre6a6qvp85" path="res://assets/textures/icon.svg" id="2_6ve0c"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvdbt"]
-size = Vector2(26, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3plol"]
+size = Vector2(134, 132)
 
-[node name="CheckpointScene" type="Area2D"]
-collision_layer = 32
+[node name="Checkpoint" type="Area2D"]
+collision_layer = 8
 collision_mask = 4
-script = ExtResource("1_bgsu6")
-
-[node name="SlimeCheckpoint" parent="." instance=ExtResource("2_kepr4")]
-layer_0/tile_data = PackedInt32Array(1, 9, 1, -65535, 9, 0, 0, 9, 1, -65536, 9, 0, 65535, 9, 1, -1, 9, 0, 65534, 9, 1, -2, 9, 0)
+script = ExtResource("1_h3wle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -21)
-scale = Vector2(7.5, 3)
-shape = SubResource("RectangleShape2D_vvdbt")
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_3plol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6ve0c")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
