@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bgsr7r2u4hnr3"]
+[gd_scene load_steps=18 format=3 uid="uid://bgsr7r2u4hnr3"]
 
 [ext_resource type="TileSet" uid="uid://dpea5pxuaae85" path="res://resources/Tileables.tres" id="1_n15fy"]
+[ext_resource type="Script" path="res://assets/scripts/level.gd" id="1_pduh7"]
 [ext_resource type="PackedScene" path="res://scenes/levelObjects/ExitDoor.tscn" id="2_4umej"]
 [ext_resource type="TileSet" uid="uid://bo80aepynedu3" path="res://resources/Props_tile_set.tres" id="3_6s27o"]
 [ext_resource type="TileSet" uid="uid://hxravpnp5huq" path="res://resources/Lava.tres" id="4_ob8ja"]
@@ -259,6 +260,7 @@ _data = {
 }
 
 [node name="Cutscene_0" type="Node"]
+script = ExtResource("1_pduh7")
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource("1_n15fy")

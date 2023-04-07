@@ -5,40 +5,45 @@ extends Node
 
 var current_scene = null
 var checkpointPos = Vector2(0,0)
-
+var levelInitialSetupComplete = false
 
 func _ready():
 	print("Game Controller Loaded")
-	
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 	
-	setUpLevel()
 func _process(delta):
 	pass
 	
 func setUpLevel():
+	if(levelInitialSetupComplete): return
+	print("Setting up " + current_scene.name)
+	if(!camera.enabled):
+		camera.enabled = true
+	
 	var enterDoor = current_scene.get_node("EnterDoor")
 	if(enterDoor):
 		player.enable()
+		
 		setCheckpoint(enterDoor.position)
 	else:
 		player.disable()
 	player.position = checkpointPos
 	camera.position = checkpointPos
+	levelInitialSetupComplete = true 
+	
 func loadLevelbyPath(path):
+	levelInitialSetupComplete = false
 	print("loading " + path)
 	call_deferred("_deferred_goto_scene",(path))	
-	setUpLevel()
 	
 func loadLevelbyIndex(i):
+	levelInitialSetupComplete = false
 	print("loading Level_" + str(i))
 	call_deferred("_deferred_goto_scene",("res://scenes/levels/Level_" + str(i) + ".tscn"))
-	setUpLevel()
 func loadNextLevel():
+	levelInitialSetupComplete = false
 	var currentLevelIndex = current_scene.name.to_int()
-	print("leaving Level_" + str(currentLevelIndex))
-	print("loading Level_" + str(currentLevelIndex+1))
 	loadLevelbyIndex(currentLevelIndex+1)
 	
 func _deferred_goto_scene(path):

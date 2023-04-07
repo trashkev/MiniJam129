@@ -130,7 +130,7 @@ func updateMovement(delta):
 		if collision.get_collider() is TileMap:
 			var rid = collision.get_collider_rid()
 			var layer = PhysicsServer2D.body_get_collision_layer(rid)
-			print("layer " + str(layer))
+			#print("layer " + str(layer))
 			if layer == 1:
 				return
 			if layer == 16:

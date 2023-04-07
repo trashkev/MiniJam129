@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://25v7h1vqb3ir"]
+[gd_scene load_steps=9 format=3 uid="uid://25v7h1vqb3ir"]
 
+[ext_resource type="Script" path="res://assets/scripts/level.gd" id="1_kt7g2"]
 [ext_resource type="PackedScene" uid="uid://dtnq0xlpuahop" path="res://scenes/game_objects/level_ambience.tscn" id="1_ljitp"]
 [ext_resource type="PackedScene" uid="uid://dd3askc62qhxf" path="res://scenes/background.tscn" id="2_rbajo"]
 [ext_resource type="PackedScene" uid="uid://klpf265aa4lx" path="res://scenes/game_objects/foreground.tscn" id="3_cmlpm"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://scenes/levelObjects/ExitDoor.tscn" id="6_m62ip"]
 
 [node name="Level_Template" type="Node"]
+script = ExtResource("1_kt7g2")
 
 [node name="LevelAmbience" parent="." instance=ExtResource("1_ljitp")]
 color = Color(0.843137, 0.870588, 0.980392, 1)
