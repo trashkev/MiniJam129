@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://t3ek660xi5av"]
+[gd_scene load_steps=3 format=3 uid="uid://dosfgfy0d6ati"]
 
 [ext_resource type="Texture2D" uid="uid://wx8wr6q1po7y" path="res://assets/environment/PropSpriteSheet.png" id="1_ngc5t"]
 
@@ -6,7 +6,7 @@
 size = Vector2(64, 32)
 
 [node name="Platform_Stone" type="StaticBody2D"]
-collision_mask = 9
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

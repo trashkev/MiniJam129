@@ -15,6 +15,12 @@ run/main_scene="res://scenes/UI/title screen/StartMenu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 run/max_fps=60
 
+[autoload]
+
+MusicController="*res://scenes/autoloads/MusicController.tscn"
+PlayerDied="*res://scenes/autoloads/PlayerDied.gd"
+Checkpoint="*res://scenes/autoloads/Checkpoint.gd"
+
 [debug]
 
 gdscript/warnings/unused_variable=0
@@ -112,7 +118,7 @@ ToggleTrail={
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Enemy"
 2d_physics/layer_5="Lava"
-2d_physics/layer_6="EnemyTurnAround"
+2d_physics/layer_6="Checkpoint"
 
 [rendering]
 
