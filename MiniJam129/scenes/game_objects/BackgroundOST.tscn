@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgtrqsinrkh3p"]
-
-[ext_resource type="AudioStream" uid="uid://c8xewebepyue4" path="res://assets/sfx/Space-Jazz.mp3" id="1_gypfr"]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_gypfr")
-volume_db = -13.349
-autoplay = true

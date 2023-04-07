@@ -6,4 +6,4 @@ func _on_body_entered(body):
 		print("leaving Level_" + str(currentLevelIndex))
 		print("loading Level_" + str(currentLevelIndex+1))
 		get_tree().change_scene_to_file("res://scenes/levels/Level_" + str(currentLevelIndex+1) + ".tscn")
-		
+				

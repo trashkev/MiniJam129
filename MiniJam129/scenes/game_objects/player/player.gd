@@ -15,6 +15,8 @@ class_name Player
 
 @export var slimeParticleScene: PackedScene
 
+signal has_died
+
 const JUMP_VELOCITY = -550.0
 const ACCELERATION = 400.0
 const DECELERATION = 500.0
@@ -51,6 +53,7 @@ func die():
 #	camera.add_trauma(0.4)
 	dieSFX.pitch_scale = randf_range(0.8,1)
 	dieSFX.play()
+	has_died.emit()
 	
 	var slimeParticleInstance = slimeParticleScene.instantiate()
 	get_parent().add_child(slimeParticleInstance)
@@ -121,9 +124,12 @@ func updateMovement(delta):
 			var rid = collision.get_collider_rid()
 			var layer = PhysicsServer2D.body_get_collision_layer(rid)
 			#print("layer " + str(layer))
+			if layer == 1:
+				return
 			if layer == 16:
 				die()
-			return	
+				return	
+					
 		if collision.get_collider().collision_layer == 2:
 			collision.get_collider().poison()
 		
@@ -185,3 +191,7 @@ func _physics_process(delta):
 		
 	updateSpriteSquish(velocity,delta)
 
+
+
+func _on_has_died():
+	pass # Replace with function body.
