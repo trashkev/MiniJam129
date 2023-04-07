@@ -20,7 +20,7 @@ vec2 get_cell_uv(vec2 uv, vec2 pixel_size) {
 
 void fragment() {
 	vec2 bubblePixelFactor = vec2(32.0/64.0,32.0/64.0);
-	vec2 noisePixelFactor = vec2(16.0/64.0,1000.0/64.0);
+	vec2 noisePixelFactor = vec2(16.0/64.0,50.0/64.0);
 	vec2 lavaPixelFactor = vec2(18.0/64.0,1500.0/64.0);
 	//noiseUV	 = vec2(world_pos * 0.002);
 	noiseUV = vec2(round(world_pos.x * noisePixelFactor.x)/noisePixelFactor.x,round(world_pos.y * noisePixelFactor.y)/noisePixelFactor.y) * 0.002;
@@ -34,7 +34,7 @@ void fragment() {
 	bubble = bubble * pow(noise,0.5);
 	
 	lavaUV = vec2(UV.x,UV.y-noise*0.1+0.05);	
-	lavaUV = vec2(round(lavaUV.x * lavaPixelFactor.x)/lavaPixelFactor.x,round(lavaUV.y * lavaPixelFactor.y)/lavaPixelFactor.y); 	
+	//lavaUV = vec2(round(lavaUV.x * lavaPixelFactor.x)/lavaPixelFactor.x,round(lavaUV.y * lavaPixelFactor.y)/lavaPixelFactor.y); 	
 	vec4 lavaColor = vec4(mix(lavaA,lavaB,lavaUV.y*2.0),texture(TEXTURE,lavaUV).a);
 	lavaUV += vec2(0,bubble * 0.4 * noise);	
 	
